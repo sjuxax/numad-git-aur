@@ -2,14 +2,14 @@
 
 pkgname=numad-git
 pkgver=0.5
-pkgrel=1
+pkgrel=2
 pkgdesc="numad is a deamon that monitors NUMA topology and usage and distributes loads for good locality for the purpose of providing the best performance, by avoiding unnecessary latency."
 arch=('x86_64' 'i686')
 license=('LGPL')
-url="https://git.fedorahosted.org/git/numad.git"
+url="https://pagure.io/numad.git"
 options=()
 depends=('cmake' 'libsystemd' 'git')
-source=("git+https://git.fedorahosted.org/git/numad.git")
+source=("git+https://pagure.io/numad.git")
 md5sums=('SKIP')
 
 build() {
