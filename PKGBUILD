@@ -8,7 +8,8 @@ arch=('x86_64' 'i686')
 license=('LGPL')
 url="https://pagure.io/numad.git"
 options=()
-depends=('cmake' 'libsystemd' 'git')
+depends=('libsystemd')
+makedepends=('cmake' 'git')
 source=("git+https://pagure.io/numad.git")
 md5sums=('SKIP')
 
