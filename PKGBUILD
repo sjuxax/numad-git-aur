@@ -1,8 +1,9 @@
 # Maintainer: Paul Dunn <pwjdunn AT gmail DOT com>
 
 pkgname=numad-git
-pkgver=0.5
-pkgrel=2
+_pkgname=numad
+pkgver=r20.abd1802
+pkgrel=1
 pkgdesc="numad is a deamon that monitors NUMA topology and usage and distributes loads for good locality for the purpose of providing the best performance, by avoiding unnecessary latency."
 arch=('x86_64' 'i686')
 license=('LGPL')
@@ -14,8 +15,13 @@ source=("git+https://pagure.io/numad.git")
 md5sums=('SKIP')
 
 build() {
-	cd "$srcdir/numad"
+	cd "${srcdir}/${_pkgname}"
 	make
+}
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
